@@ -3,6 +3,7 @@ import logging
 import pandas as pd
 import numpy as np
 
+
 from collections import Counter
 
 from sklearn import preprocessing, utils
@@ -27,6 +28,11 @@ if not os.path.exists('{}/images'.format(OUTPUT_DIRECTORY)):
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
+#turn off warnings
+import warnings
+from sklearn.exceptions import DataConversionWarning
+warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 
 
 def plot_pairplot(title, df, class_column_name=None):
