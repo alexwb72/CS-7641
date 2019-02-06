@@ -6,8 +6,11 @@ import numpy as np
 import experiments
 from data import loader
 
+
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='./output/Logs/main_output_log.txt',
+                            filemode='a',
+    level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 

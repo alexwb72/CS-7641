@@ -26,7 +26,9 @@ if not os.path.exists('{}/images'.format(OUTPUT_DIRECTORY)):
     os.makedirs('{}/images'.format(OUTPUT_DIRECTORY))
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='./output/Logs/main_output_log.txt',
+                            filemode='a',
+    level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 #turn off warnings
@@ -387,5 +389,5 @@ if __name__ == '__main__':
     cd_data = CreditDefaultData(verbose=True)
     cd_data.load_and_process()
 
-    ca_data = CreditApprovalData(verbose=True)
+    ca_data = PenDigitData(verbose=True)
     ca_data.load_and_process()

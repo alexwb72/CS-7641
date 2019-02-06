@@ -3,7 +3,9 @@ import logging
 from abc import ABC, abstractmethod
 from sklearn.base import BaseEstimator, ClassifierMixin
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='./output/Logs/main_output_log.txt',
+                            filemode='a',
+                    level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 
