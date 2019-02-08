@@ -49,14 +49,14 @@ if __name__ == '__main__':
     print("----------")
 
     ds1_details = {
-            'data': loader.CreditDefaultData(verbose=verbose, seed=seed),
-            'name': 'credit_default',
-            'readable_name': 'Credit Default',
+            'data': loader.SpamData(verbose=verbose, seed=seed),
+            'name': 'SpamData',
+            'readable_name': 'Spam Data',
         }
     ds2_details = {
-            'data': loader.PenDigitData(verbose=verbose, seed=seed),
-            'name': 'pen_digits',
-            'readable_name': 'Handwritten Digits',
+            'data': loader.HTRU2Data(verbose=verbose, seed=seed),
+            'name': 'HTRU2Data',
+            'readable_name': 'HTRU2 Data',
         }
 
     if verbose:

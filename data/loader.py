@@ -118,9 +118,11 @@ class DataLoader(ABC):
         self.features = StandardScaler().fit_transform(self.features)
         if self.training_x is not None:
             self.training_x = StandardScaler().fit_transform(self.training_x)
+            self.log("Scaling Training")
 
         if self.testing_x is not None:
             self.testing_x = StandardScaler().fit_transform(self.testing_x)
+            self.log("Scaling Testing")
 
     def build_train_test_split(self, test_size=0.3):
         if not self.training_x and not self.training_y and not self.testing_x and not self.testing_y:
