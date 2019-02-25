@@ -26,7 +26,7 @@ if not os.path.exists('{}/images'.format(OUTPUT_DIRECTORY)):
     os.makedirs('{}/images'.format(OUTPUT_DIRECTORY))
 
 # Configure logging
-logging.basicConfig(filename='/output/Logs/main_output_log.txt',
+logging.basicConfig(filename='output/main_output_log.txt',
                             filemode='a',
     level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)

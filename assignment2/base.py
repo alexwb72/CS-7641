@@ -140,4 +140,4 @@ def train(oa, network, oaName, training_ints, validation_ints, testing_ints, mea
                                                              acc_tst, f1_trg, f1_val, f1_tst, times[-1])
             print txt
             with open(outfile, 'a+') as f:
-                f.write(txt)
+f.write(txt)
