@@ -68,8 +68,8 @@ for t in range(numTrials):
         fevals = ef.fevals
         score = ef.value(rhc.getOptimal())
         ef.fevals -= 1
-        st = '{},{},{},{}\n'.format(i, score, times[-1], fevals)
-        print st
+        st = '{},{},{},{}'.format(i, score, times[-1], fevals)
+        print '{},{},{},{}'.format(i, score, times[-1], fevals)
         with open(fname, 'a') as f:
             f.write(st)
 

@@ -139,5 +139,6 @@ def train(oa, network, oaName, training_ints, validation_ints, testing_ints, mea
             txt = '{},{},{},{},{},{},{},{},{},{},{}\n'.format(iteration, MSE_trg, MSE_val, MSE_tst, acc_trg, acc_val,
                                                              acc_tst, f1_trg, f1_val, f1_tst, times[-1])
             print txt
-            with open(outfile, 'a+') as f:
-f.write(txt)
+            with open(outfile, 'w') as f:
+                f.write(txt)
+
