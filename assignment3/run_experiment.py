@@ -92,7 +92,7 @@ if __name__ == '__main__':
             'data': loader.SpamData(verbose=verbose, seed=seed),
             'name': 'spam',
             'readable_name': 'Spam',
-            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha':[3.162277660168379e-06], 'NN__hidden_layer_sizes': [(28, 28, 28)], 'NNP__learning_rate_init': [0.016]}
+            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha':[3.162277660168379e-06], 'NN__hidden_layer_sizes': [(28, 28, 28)], 'NN__learning_rate_init': [0.016]}
        }
     dataset2_details = {
             'data': loader.HTRU2Data(verbose=verbose, seed=seed),
