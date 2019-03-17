@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 
 import matplotlib as mpl
+mpl.use('TkAgg')
 import matplotlib.axes as maxes
 import matplotlib.pyplot as plt
 

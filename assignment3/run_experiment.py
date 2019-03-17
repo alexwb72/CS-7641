@@ -40,7 +40,7 @@ if __name__ == '__main__':
     parser.add_argument('--skiprerun', action='store_true',
                         help='If true, do not re-run the main experiment before clustering '
                              '(This MUST be used with --dim and a specific experiment)')
-    parser.add_argument('--statlog', action='store_true', help='Run only statlog vehicle')
+    parser.add_argument('--spam', action='store_true', help='Run only Spam')
     parser.add_argument('--htru2', action='store_true', help='Run only HTRU2')
     parser.add_argument('--benchmark', action='store_true', help='Run the benchmark experiments')
     parser.add_argument('--ica', action='store_true', help='Run the ICA experiments')
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         parser.print_help()
         sys.exit(1)
 
-    if args.statlog and args.htru2:
+    if args.spam and args.htru2:
         logger.error("Can only specify one of '--statlog' or '--htru2', not both")
         parser.print_help()
         sys.exit(1)
@@ -83,22 +83,22 @@ if __name__ == '__main__':
     logger.info("----------")
 
     datasets = []
-    statlog_details = {
-            'data': loader.StatlogVehicleData(verbose=verbose, seed=seed),
-            'name': 'statlog_vehicle',
-            'readable_name': 'Statlog Vehicle',
+    spam_details = {
+            'data': loader.SpamData(verbose=verbose, seed=seed),
+            'name': 'spam',
+            'readable_name': 'Spam',
         }
     htru2_details = {
             'data': loader.HTRU2Data(verbose=verbose, seed=seed),
             'name': 'htru2',
             'readable_name': 'HTRU2',
         }
-    if args.statlog:
-        datasets.append(statlog_details)
+    if args.spam:
+        datasets.append(spam_details)
     elif args.htru2:
         datasets.append(htru2_details)
-    elif not args.statlog and not args.htru2:
-        datasets.append(statlog_details)
+    elif not args.spam and not args.htru2:
+        datasets.append(spam_details)
         datasets.append(htru2_details)
 
     experiment_details = []
